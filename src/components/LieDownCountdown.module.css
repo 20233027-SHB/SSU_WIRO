@@ -1,0 +1,80 @@
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-card);
+}
+
+.title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-sub);
+}
+
+.body {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 14px;
+}
+
+.ring {
+  position: relative;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--ring-color, var(--wiro-500)) var(--progress, 0%),
+    var(--wiro-100) 0
+  );
+  transition: background 0.6s linear;
+}
+
+.ring::after {
+  content: '';
+  position: absolute;
+  inset: 9px;
+  border-radius: 50%;
+  background: var(--card);
+}
+
+.ringInner {
+  position: relative;
+  z-index: 1; /* .ring::after 마스크 위로 올린다 */
+  font-size: 26px;
+  line-height: 1;
+}
+
+.text {
+  min-width: 0;
+}
+
+.remaining {
+  font-size: 19px;
+  text-wrap: balance; /* "남음" 두 글자만 다음 줄로 넘어가는 것 방지 */
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  font-variant-numeric: tabular-nums;
+}
+
+.caption {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--text-sub);
+  line-height: 1.5;
+}
+
+/* 목표 시간을 채우면 카드 전체가 "안전" 톤으로 바뀐다 */
+.card[data-safe='true'] {
+  background: linear-gradient(160deg, #ffffff, var(--wiro-100));
+  border-color: var(--wiro-200);
+}
+
+.card[data-safe='true'] .remaining {
+  color: var(--wiro-700);
+}
