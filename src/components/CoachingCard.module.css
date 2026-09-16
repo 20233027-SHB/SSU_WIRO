@@ -1,0 +1,36 @@
+.card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 18px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(150deg, #ffffff, var(--wiro-100));
+  border: 1px solid var(--wiro-200);
+  box-shadow: var(--shadow-card);
+}
+
+.icon {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+  line-height: 1;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--wiro-700);
+  letter-spacing: 0.01em;
+}
+
+.tip {
+  margin-top: 5px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+}

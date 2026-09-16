@@ -1,0 +1,150 @@
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-card);
+}
+
+.title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-sub);
+}
+
+.body {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 14px;
+}
+
+.blobWrap {
+  position: relative;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 92px;
+  height: 92px;
+}
+
+.halo {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--halo, var(--wiro-100));
+  opacity: 0.55;
+  animation: pulse 3.6s ease-in-out infinite;
+}
+
+.blob {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 74px;
+  height: 74px;
+  font-size: 36px;
+  line-height: 1;
+  border-radius: 46% 54% 52% 48% / 52% 48% 55% 45%;
+  background: var(--blob, linear-gradient(160deg, #f1f1ee, #e4e4df));
+  animation: breathe 3.6s ease-in-out infinite;
+}
+
+/* 단계별 색: JSON 의 state 값이 그대로 스타일 스위치가 된다 */
+.card[data-state='digesting'] {
+  --blob: linear-gradient(160deg, #ffeed6, #ffd7ae);
+  --halo: #fff1de;
+}
+.card[data-state='easing'] {
+  --blob: linear-gradient(160deg, #e8f5ea, #cceeda);
+  --halo: #eaf7ee;
+}
+.card[data-state='safe'] {
+  --blob: linear-gradient(160deg, var(--wiro-100), var(--wiro-200));
+  --halo: var(--wiro-100);
+}
+.card[data-state='idle'] {
+  --blob: linear-gradient(160deg, #f2f2f0, #e6e6e1);
+  --halo: #f0f0ee;
+}
+
+.text {
+  min-width: 0;
+}
+
+.message {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+}
+
+.caption {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--text-sub);
+  line-height: 1.5;
+}
+
+.track {
+  display: flex;
+  gap: 8px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 4px;
+  border-radius: var(--radius-sm);
+  background: #f7f7f4;
+  opacity: 0.55;
+  transition: opacity 0.25s ease, background 0.25s ease;
+}
+
+.step[data-active='true'] {
+  opacity: 1;
+  background: var(--wiro-100);
+}
+
+.stepEmoji {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.stepLabel {
+  font-size: 11px;
+  color: var(--text-sub);
+}
+
+.step[data-active='true'] .stepLabel {
+  color: var(--wiro-700);
+  font-weight: 600;
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.045);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(0.92);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}

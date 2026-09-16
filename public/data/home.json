@@ -1,0 +1,89 @@
+{
+  "user": {
+    "name": "하빈",
+    "lieDownAfterHours": 3
+  },
+
+  "content": {
+    "appName": "WIRO",
+    "greeting": "{name}님, 오늘도 위로해요",
+    "digestionTitle": "지금 내 위장은",
+    "digestionCaption": "마지막 식사 후 {elapsed} 지났어요",
+    "countdownTitle": "눕기 카운트다운",
+    "countdownRemaining": "누우려면 {time} 남음",
+    "countdownSafe": "지금은 누워도 안전해요",
+    "countdownCaption": "마지막 식사 {meal} · {time}",
+    "countdownNoMeal": "아직 오늘 식사 기록이 없어요",
+    "timelineTitle": "오늘의 식사",
+    "timelineEmpty": "아직 오늘 기록된 식사가 없어요",
+    "coachingTitle": "오늘의 맞춤 코칭",
+    "addMealLabel": "사진으로 식사 추가",
+    "addMealHint": "AI가 사진을 보고 위험 성분을 자동으로 태깅해요",
+    "noMealEmoji": "🍽️",
+    "noMealMessage": "첫 끼를 기록하면 소화 상태를 알려드릴게요",
+    "disclaimer": "WIRO는 의료 진단·치료 서비스가 아닙니다. 생활습관 관리를 돕는 참고용 정보를 제공해요."
+  },
+
+  "riskMeta": {
+    "green": { "label": "안심", "color": "#1F8A4C", "bg": "#E7F5EC" },
+    "yellow": { "label": "주의", "color": "#B07207", "bg": "#FDF2DC" },
+    "red": { "label": "위험", "color": "#D2453F", "bg": "#FCEAE9" }
+  },
+
+  "digestionStages": [
+    { "minAfterMinutes": 0,   "state": "digesting", "emoji": "😮‍💨", "message": "열심히 소화 중이에요" },
+    { "minAfterMinutes": 90,  "state": "easing",    "emoji": "🙂",   "message": "이제 좀 편해졌어요" },
+    { "minAfterMinutes": 180, "state": "safe",      "emoji": "😌",   "message": "이제 누워도 괜찮아요" }
+  ],
+
+  "meals": [
+    {
+      "id": 1,
+      "name": "아메리카노",
+      "photo": "☕",
+      "eatenAt": "2026-09-15T08:10:00",
+      "riskLevel": "yellow",
+      "tags": ["카페인"]
+    },
+    {
+      "id": 2,
+      "name": "바나나",
+      "photo": "🍌",
+      "eatenAt": "2026-09-15T10:40:00",
+      "riskLevel": "green",
+      "tags": []
+    },
+    {
+      "id": 3,
+      "name": "돈까스 정식",
+      "photo": "🍱",
+      "eatenAt": "2026-09-15T12:30:00",
+      "riskLevel": "red",
+      "tags": ["기름짐", "과식"]
+    },
+    {
+      "id": 4,
+      "name": "치킨과 맥주",
+      "photo": "🍗",
+      "eatenAt": "2026-09-15T20:30:00",
+      "riskLevel": "red",
+      "tags": ["기름짐", "알코올", "과식"]
+    }
+  ],
+
+  "coaching": [
+    { "matchTag": "기름짐",  "tip": "기름진 식사는 위산 역류를 부르기 쉬워요. 식후 바로 눕지 마세요." },
+    { "matchTag": "알코올",  "tip": "음주한 날은 상체를 살짝 높여 자는 게 도움이 돼요." },
+    { "matchTag": "카페인",  "tip": "오후에 카페인을 드셨어요. 취침 4시간 전부터는 피해보세요." },
+    { "matchTag": "매운맛",  "tip": "매운 음식 뒤에는 미지근한 물을 천천히 나눠 마셔보세요." },
+    { "matchTag": "과식",    "tip": "과식한 날은 식후 10분 가벼운 산책이 위 부담을 줄여줘요." },
+    { "matchTag": "default", "tip": "오늘은 위에 부담이 적은 하루예요. 이대로 유지해요!" }
+  ],
+
+  "aiScanSamples": [
+    { "name": "치즈 라면", "photo": "🍜", "riskLevel": "red",    "tags": ["기름짐", "매운맛", "과식"] },
+    { "name": "캐모마일차", "photo": "🍵", "riskLevel": "green",  "tags": [] },
+    { "name": "아이스 아메리카노", "photo": "🧊", "riskLevel": "yellow", "tags": ["카페인"] },
+    { "name": "삼겹살", "photo": "🥓", "riskLevel": "red",    "tags": ["기름짐", "과식"] }
+  ]
+}

@@ -1,0 +1,46 @@
+.wrap {
+  padding-top: 4px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 16px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(140deg, var(--wiro-500), var(--wiro-700));
+  border: none;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-float);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 10px rgba(46, 158, 143, 0.25);
+}
+
+.button:focus-visible {
+  outline: 3px solid var(--wiro-200);
+  outline-offset: 2px;
+}
+
+.icon {
+  font-size: 17px;
+  line-height: 1;
+}
+
+.hint {
+  margin-top: 9px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-mute);
+}

@@ -1,0 +1,81 @@
+/* WIRO 디자인 토큰 + 리셋. 색·간격·라운드는 전부 여기서만 정의한다. */
+:root {
+  /* 포인트: 위를 위로하는 차분한 청록~민트 */
+  --wiro-700: #1f7a6e;
+  --wiro-600: #2e9e8f;
+  --wiro-500: #3db0a0;
+  --wiro-200: #bfe5de;
+  --wiro-100: #e3f4f1;
+
+  /* 바탕: 아주 옅은 웜그레이 */
+  --bg: #f6f5f2;
+  --card: #ffffff;
+  --border: #ecebe6;
+
+  --text: #1e2a28;
+  --text-sub: #6f7b79;
+  --text-mute: #9aa5a3;
+
+  --radius-lg: 20px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+
+  --shadow-card: 0 1px 2px rgba(30, 42, 40, 0.04), 0 8px 24px rgba(30, 42, 40, 0.05);
+  --shadow-float: 0 6px 20px rgba(46, 158, 143, 0.28);
+
+  color-scheme: light;
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo',
+    system-ui, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100dvh;
+  color: var(--text);
+  /* 한글이 글자 단위로 끊기지 않고 어절 단위로 줄바꿈되게 한다 */
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  /* 데스크톱에서 가운데 모바일 목업처럼 보이게 하는 바깥 배경 */
+  background: linear-gradient(160deg, #eaeeec 0%, #f2f1ed 45%, #eef1ef 100%);
+  display: flex;
+  justify-content: center;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

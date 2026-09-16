@@ -1,0 +1,36 @@
+.phone {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  max-width: 430px;
+  min-height: 100dvh;
+  padding: 24px 18px 36px;
+  background: var(--bg);
+}
+
+/* 데스크톱에서는 가운데 모바일 목업처럼 */
+@media (min-width: 520px) {
+  .phone {
+    min-height: 760px;
+    margin: 28px 0;
+    border: 1px solid rgba(30, 42, 40, 0.06);
+    border-radius: 30px;
+    box-shadow: 0 24px 70px rgba(30, 42, 40, 0.12);
+  }
+}
+
+.status {
+  margin: auto;
+  font-size: 14px;
+  color: var(--text-mute);
+}
+
+.disclaimer {
+  margin-top: 6px;
+  padding: 0 4px;
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--text-mute);
+  text-align: center;
+}
